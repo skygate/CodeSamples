@@ -1,0 +1,16 @@
+---
+DEFAULT:
+    service_url: https://api.service.com/
+    origins: https://service.com/
+
+qa:
+    service_url: https://api.labs.service.com/
+    origins: https://qa.service.com/
+
+dev:
+    service_url: https://api.labs.service.com/
+
+prod: {}
+
+test:
+    service_url: SERVICE_URL
