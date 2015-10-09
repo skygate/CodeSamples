@@ -1,11 +1,12 @@
 from .base import BaseBroker
 from xmlrpc.client import ServerProxy
-from . import config
+from .server import Server
 
 
 class InfusionBroker(BaseBroker):
 
-    base_url = config["base_url"]
+    base_url = "https://{}.infusionsoft.com:443/api/xmlrpc"
+    contact_url = "https://{}.infusionsoft.com/Contact/manageContact.jsp?view=edit&ID={}"
 
     def __init__(self, credentials):
         self._id = credentials["id"]
@@ -23,7 +24,7 @@ class InfusionBroker(BaseBroker):
             return {}
 
     def _get_url_from_id(self, contact_id):
-        return config["contact_url"].format(self._id, contact_id)
+        return self.contact_url.format(self._id, contact_id)
 
     def get_contact_url(self, email):
         contact = self._get_contact_by_email(email)
@@ -36,7 +37,10 @@ class InfusionBroker(BaseBroker):
             "LastName": last_name,
             "Email": email,
         }
-        contact_id = self.server.ContactService.addWithDupCheck(
+        contact_id = self._server.ContactService.addWithDupCheck(
             self._key, new_contact, "Email"
         )
         return self._get_url_from_id(contact_id)
+
+
+server = Server(InfusionBroker, __name__)
