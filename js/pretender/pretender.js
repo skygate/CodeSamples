@@ -17,12 +17,12 @@ class PretenderBuilder {
 
     getPrototypeMethodNames (prototype) {
         return Object.getOwnPropertyNames(prototype)
-                .map(name => [name, Object.getOwnPropertyDescriptor(prototype, name)])
-    .filter(([name, descriptor]) => {
-            return descriptor.value instanceof Function;
-    })
-    .map(([name]) => name)
-    .concat(this.getParentMethodNames(prototype));
+            .map(name => [name, Object.getOwnPropertyDescriptor(prototype, name)])
+            .filter(([name, descriptor]) => {
+                return descriptor.value instanceof Function;
+            })
+            .map(([name]) => name)
+            .concat(this.getParentMethodNames(prototype));
     }
 
     getParentMethodNames (prototype) {
