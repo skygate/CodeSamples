@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translation>
+    <source-language name="en" />
+    <target-languages>
+        <language name="pl" />
+        <language name="de" />
+    </target-languages>
+    <content>
+        This is example content
+    </content>
+</translation>
