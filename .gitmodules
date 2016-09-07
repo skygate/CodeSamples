@@ -1,0 +1,3 @@
+[submodule "projects/tedx"]
+	path = projects/tedx
+	url = https://github.com/skygate/tedx
