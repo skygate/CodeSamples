@@ -10,7 +10,7 @@ chardet==3.0.4
 coincurve==7.1.0
 Django==2.0.2
 django-celery==3.2.2
-djangorestframework==3.7.7
+djangorestframework==3.9.1
 idna==2.6
 kombu==3.0.37
 pycparser==2.18
