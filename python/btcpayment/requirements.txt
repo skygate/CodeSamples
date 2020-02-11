@@ -8,7 +8,7 @@ certifi==2018.1.18
 cffi==1.11.5
 chardet==3.0.4
 coincurve==7.1.0
-Django==2.0.2
+Django==2.2.10
 django-celery==3.2.2
 djangorestframework==3.7.7
 idna==2.6
