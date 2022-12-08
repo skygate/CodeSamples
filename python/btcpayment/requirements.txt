@@ -4,7 +4,7 @@ asn1crypto==0.24.0
 billiard==3.3.0.23
 bit==0.4.2
 celery==3.1.25
-certifi==2018.1.18
+certifi==2022.12.7
 cffi==1.11.5
 chardet==3.0.4
 coincurve==7.1.0
